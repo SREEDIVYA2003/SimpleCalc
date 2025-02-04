@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Basic Calculator</title>
+    <title>Enhanced Calculator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Simple Calculator</h1>
-    <form action="Calculator.jsp" method="post">  <%-- Form submits to itself --%>
+    <h1>Modern Calculator</h1>
+    <form action="Calculator.jsp" method="post">  
         <input type="text" name="num1" placeholder="Enter number 1" required><br><br>
         <input type="text" name="num2" placeholder="Enter number 2" required><br><br>
 
@@ -32,23 +32,31 @@
                 double num2 = Double.parseDouble(num2Str);
                 double result = 0;
 
+                boolean error = false;
+                String message = "";
+
                 switch (operator) {
                     case "+": result = num1 + num2; break;
                     case "-": result = num1 - num2; break;
                     case "*": result = num1 * num2; break;
                     case "/":
                         if (num2 == 0) {
-                            out.println("<p style='color:red;'>Cannot divide by zero!</p>");
+                            message = "Cannot divide by zero!";
+                            error = true;
                         } else {
                             result = num1 / num2;
                         }
                         break;
                 }
 
-                out.println("<p>Result: " + result + "</p>");
+                if (error) {
+                    out.println("<p class='error'>" + message + "</p>");
+                } else {
+                    out.println("<p class='result'>Result: " + result + "</p>");
+                }
 
             } catch (NumberFormatException e) {
-                out.println("<p style='color:red;'>Invalid input. Please enter numbers only.</p>");
+                out.println("<p class='error'>Invalid input. Please enter valid numbers.</p>");
             }
         }
     %>
