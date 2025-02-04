@@ -1,42 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Roboto+Mono:wght@400;700&display=swap');
+
 body {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-    margin: 50px;
+    margin: 20px;
+    background-color: #f8f9fa;
+    font-size: 12px; /* Smaller text */
 }
 
 h1 {
-    color: #333;
+    color: #2c3e50;
+    font-size: 18px; /* Smaller heading */
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 form {
-    display: inline-block; /* or block */
-    padding: 20px;
-    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    background: white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
 }
 
 input[type="text"], select {
-    padding: 8px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
+    padding: 6px;
+    margin: 3px 0;
+    border: 1px solid #bbb;
     border-radius: 3px;
-    width: 200px; /* Adjust as needed */
+    width: 160px; /* Smaller width */
+    font-size: 12px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 input[type="submit"] {
-    background-color: #4CAF50; /* Green */
+    background-color: #27ae60;
     color: white;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+input[type="submit"]:hover {
+    background-color: #219150;
 }
 
 p {
-    margin-top: 10px;
+    margin-top: 8px;
     font-weight: bold;
+    font-size: 12px;
 }
 
 .error {
     color: red;
+    font-size: 11px;
+    font-family: 'Roboto Mono', monospace;
 }
